@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f8f8f8;
+      padding: 40px;
+    }
+
+    form {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    input[type="submit"] {
+      background-color: #004080;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      margin-top: 20px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #002c5c;
+    }
+
+    label {
+      margin-top: 20px;
+      display: block;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <form action="mailto:teu@email.com" method="POST" enctype="text/plain">
+    <label for="lastname">Name *</label>
+    <input type="text" name="lastname" required />
+
+    <label for="firstname">First name *</label>
+    <input type="text" name="firstname" required />
+
+    <label for="company">Company</label>
+    <input type="text" name="company" />
+
+    <label for="email">Email *</label>
+    <input type="email" name="email" required />
+
+    <label for="phone">Phone *</label>
+    <input type="text" name="phone" required />
+
+    <label for="object">Purpose of your request *</label>
+    <select name="contactObject" id="object" required>
+      <option value="" disabled selected>Choose one...</option>
+      <option value="press">Contact the press department</option>
+      <option value="partnerships">Contact the Partnerships Department</option>
+      <option value="sales-paris">Contact HENRI Paris sales</option>
+      <option value="sales-cote">Contact HENRI Côte d'Azur sales</option>
+      <option value="sales-alpes">Contact HENRI Alpes sales</option>
+      <option value="sales-ny">Contact HENRI New York sales</option>
+    </select>
+
+    <label for="message">Message *</label>
+    <textarea name="message" rows="6" required></textarea>
+
+    <input type="submit" value="Send" />
+  </form>
+</body>
+</html>
