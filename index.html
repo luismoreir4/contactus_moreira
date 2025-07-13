@@ -1,140 +1,150 @@
-<!-- Link da fonte Montserrat -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Contato</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: black;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 40px 20px;
+    }
 
-<style>
-  body {
-    background-color: transparent;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-  }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: transparent;
+    }
 
-  form {
-    max-width: 600px;
-    margin: auto;
-    background-color: transparent;
-  }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+    }
 
-  input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-  }
+    select option {
+      background-color: white;
+      color: black;
+    }
 
-  select option {
-    background-color: white;
-    color: black;
-  }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
 
-  textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
 
-  label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
-  }
+    .required::after {
+      content: " *";
+      color: red;
+    }
 
-  .required::after {
-    content: " *";
-    color: red;
-  }
+    .submit-button {
+      background-color: #C2A76D;
+      color: white;
+      border: none;
+      padding: 12px 32px;
+      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto 0 auto;
+    }
 
-  .submit-button {
-    background-color: #C2A76D;
-    color: white;
-    border: none;
-    padding: 12px 32px;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    display: block;
-    margin: 30px auto 0 auto;
-  }
+    .submit-button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
 
-  .submit-button:hover {
-    opacity: 0.9;
-  }
-</style>
+  <form action="https://formspree.io/f/mgvzwkzy" method="POST">
+    <label for="lastname" class="required">Name</label>
+    <input type="text" id="lastname" name="lastname" required>
 
-<form action="https://formspree.io/f/mgvzwkzy" method="POST">
-  <label for="lastname" class="required">Name</label>
-  <input type="text" id="lastname" name="lastname" required>
+    <label for="company">Company</label>
+    <input type="text" id="company" name="company">
 
-  <label for="company">Company</label>
-  <input type="text" id="company" name="company">
+    <label for="email" class="required">Email</label>
+    <input type="email" id="email" name="email" required>
 
-  <label for="email" class="required">Email</label>
-  <input type="email" id="email" name="email" required>
+    <label for="phone_prefix" class="required">Country Code</label>
+    <select id="phone_prefix" name="phone_prefix" required>
+      <option value="" disabled selected>Select your country code</option>
+      <option value="+43">+43 Austria</option>
+      <option value="+32">+32 Belgium</option>
+      <option value="+359">+359 Bulgaria</option>
+      <option value="+1">+1 Canada</option>
+      <option value="+385">+385 Croatia</option>
+      <option value="+357">+357 Cyprus</option>
+      <option value="+420">+420 Czech Republic</option>
+      <option value="+45">+45 Denmark</option>
+      <option value="+372">+372 Estonia</option>
+      <option value="+358">+358 Finland</option>
+      <option value="+33">+33 France</option>
+      <option value="+49">+49 Germany</option>
+      <option value="+30">+30 Greece</option>
+      <option value="+36">+36 Hungary</option>
+      <option value="+353">+353 Ireland</option>
+      <option value="+39">+39 Italy</option>
+      <option value="+371">+371 Latvia</option>
+      <option value="+370">+370 Lithuania</option>
+      <option value="+352">+352 Luxembourg</option>
+      <option value="+356">+356 Malta</option>
+      <option value="+31">+31 Netherlands</option>
+      <option value="+48">+48 Poland</option>
+      <option value="+351">+351 Portugal</option>
+      <option value="+40">+40 Romania</option>
+      <option value="+421">+421 Slovakia</option>
+      <option value="+386">+386 Slovenia</option>
+      <option value="+34">+34 Spain</option>
+      <option value="+46">+46 Sweden</option>
+      <option value="+44">+44 United Kingdom</option>
+      <option value="+1">+1 United States</option>
+    </select>
 
-  <label for="phone_prefix" class="required">Country Code</label>
-  <select id="phone_prefix" name="phone_prefix" required>
-    <option value="" disabled selected>Select your country code</option>
-    <option value="+43">+43 Austria</option>
-    <option value="+32">+32 Belgium</option>
-    <option value="+359">+359 Bulgaria</option>
-    <option value="+1">+1 Canada</option>
-    <option value="+385">+385 Croatia</option>
-    <option value="+357">+357 Cyprus</option>
-    <option value="+420">+420 Czech Republic</option>
-    <option value="+45">+45 Denmark</option>
-    <option value="+372">+372 Estonia</option>
-    <option value="+358">+358 Finland</option>
-    <option value="+33">+33 France</option>
-    <option value="+49">+49 Germany</option>
-    <option value="+30">+30 Greece</option>
-    <option value="+36">+36 Hungary</option>
-    <option value="+353">+353 Ireland</option>
-    <option value="+39">+39 Italy</option>
-    <option value="+371">+371 Latvia</option>
-    <option value="+370">+370 Lithuania</option>
-    <option value="+352">+352 Luxembourg</option>
-    <option value="+356">+356 Malta</option>
-    <option value="+31">+31 Netherlands</option>
-    <option value="+48">+48 Poland</option>
-    <option value="+351">+351 Portugal</option>
-    <option value="+40">+40 Romania</option>
-    <option value="+421">+421 Slovakia</option>
-    <option value="+386">+386 Slovenia</option>
-    <option value="+34">+34 Spain</option>
-    <option value="+46">+46 Sweden</option>
-    <option value="+44">+44 United Kingdom</option>
-    <option value="+1">+1 United States</option>
-  </select>
+    <label for="phone_number" class="required">Phone Number</label>
+    <input type="text" id="phone_number" name="phone_number" required>
 
-  <label for="phone_number" class="required">Phone Number</label>
-  <input type="text" id="phone_number" name="phone_number" required>
+    <label for="request" class="required">Purpose of your request</label>
+    <select id="request" name="request" required>
+      <option value="" disabled selected>Select an option</option>
+      <option value="info">General Information</option>
+      <option value="demo">Schedule a Demo</option>
+      <option value="maintenance">Maintenance</option>
+      <option value="support">Support Request</option>
+      <option value="consulting">Consulting</option>
+      <option value="other">Other</option>
+    </select>
 
-  <label for="request" class="required">Purpose of your request</label>
-  <select id="request" name="request" required>
-    <option value="" disabled selected>Select an option</option>
-    <option value="info">General Information</option>
-    <option value="demo">Schedule a Demo</option>
-    <option value="maintenance">Maintenance</option>
-    <option value="support">Support Request</option>
-    <option value="consulting">Consulting</option>
-    <option value="other">Other</option>
-  </select>
+    <label for="who" class="required">Who am I?</label>
+    <select id="who" name="who" required>
+      <option value="" disabled selected>Select your role</option>
+      <option value="architect">Architect</option>
+      <option value="designer">Interior Designer</option>
+      <option value="owner">Owner</option>
+      <option value="builder">Builder</option>
+      <option value="manager">Property Manager</option>
+      <option value="other">Other</option>
+    </select>
 
-  <label for="who" class="required">Who am I?</label>
-  <select id="who" name="who" required>
-    <option value="" disabled selected>Select your role</option>
-    <option value="architect">Architect</option>
-    <option value="designer">Interior Designer</option>
-    <option value="owner">Owner</option>
-    <option value="builder">Builder</option>
-    <option value="manager">Property Manager</option>
-    <option value="other">Other</option>
-  </select>
+    <label for="message" class="required">Message</label>
+    <textarea id="message" name="message" required placeholder="Write your message..."></textarea>
 
-  <label for="message" class="required">Message</label>
-  <textarea id="message" name="message" required placeholder="Write your message..."></textarea>
+    <button type="submit" class="submit-button">Send</button>
+  </form>
 
-  <button type="submit" class="submit-button">Send</button>
-</form>
+</body>
+</html>
