@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Get in Touch with Us</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css"/>
   <style>
     body {
       background-color: black;
@@ -17,6 +16,7 @@
     form {
       max-width: 600px;
       margin: auto;
+      background-color: transparent;
     }
 
     input, select, textarea {
@@ -26,6 +26,7 @@
       background-color: black;
       color: white;
       border: 1px solid white;
+      font-family: 'Montserrat', sans-serif;
       font-size: 14px;
     }
 
@@ -56,6 +57,7 @@
       border: none;
       padding: 12px 32px;
       font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
       cursor: pointer;
       display: block;
       margin: 30px auto 0 auto;
@@ -63,10 +65,6 @@
 
     .submit-button:hover {
       opacity: 0.9;
-    }
-
-    .hidden {
-      display: none;
     }
   </style>
 </head>
@@ -82,11 +80,46 @@
     <label for="email" class="required">Email</label>
     <input type="email" id="email" name="email" required>
 
+    <label for="phone_prefix" class="required">Country Code</label>
+    <select id="phone_prefix" name="phone_prefix" required>
+      <option value="" disabled selected>Select your country code</option>
+      <option value="+43">+43 Austria</option>
+      <option value="+32">+32 Belgium</option>
+      <option value="+359">+359 Bulgaria</option>
+      <option value="+1">+1 Canada</option>
+      <option value="+385">+385 Croatia</option>
+      <option value="+357">+357 Cyprus</option>
+      <option value="+420">+420 Czech Republic</option>
+      <option value="+45">+45 Denmark</option>
+      <option value="+372">+372 Estonia</option>
+      <option value="+358">+358 Finland</option>
+      <option value="+33">+33 France</option>
+      <option value="+49">+49 Germany</option>
+      <option value="+30">+30 Greece</option>
+      <option value="+36">+36 Hungary</option>
+      <option value="+353">+353 Ireland</option>
+      <option value="+39">+39 Italy</option>
+      <option value="+371">+371 Latvia</option>
+      <option value="+370">+370 Lithuania</option>
+      <option value="+352">+352 Luxembourg</option>
+      <option value="+356">+356 Malta</option>
+      <option value="+31">+31 Netherlands</option>
+      <option value="+48">+48 Poland</option>
+      <option value="+351">+351 Portugal</option>
+      <option value="+40">+40 Romania</option>
+      <option value="+421">+421 Slovakia</option>
+      <option value="+386">+386 Slovenia</option>
+      <option value="+34">+34 Spain</option>
+      <option value="+46">+46 Sweden</option>
+      <option value="+44">+44 United Kingdom</option>
+      <option value="+1">+1 United States</option>
+    </select>
+
     <label for="phone_number" class="required">Phone Number</label>
-    <input type="tel" id="phone_number" name="phone_number" required>
+    <input type="text" id="phone_number" name="phone_number" required>
 
     <label for="request" class="required">Purpose of your request</label>
-    <select id="request" name="request" required onchange="toggleOtherField(this, 'other-request-container')">
+    <select id="request" name="request" required>
       <option value="" disabled selected>Select an option</option>
       <option value="info">General Information</option>
       <option value="demo">Schedule a Demo</option>
@@ -96,13 +129,8 @@
       <option value="other">Other</option>
     </select>
 
-    <div id="other-request-container" class="hidden">
-      <label for="other_request_detail">Please specify</label>
-      <input type="text" id="other_request_detail" name="other_request_detail">
-    </div>
-
     <label for="who" class="required">Who am I?</label>
-    <select id="who" name="who" required onchange="toggleOtherField(this, 'other-who-container')">
+    <select id="who" name="who" required>
       <option value="" disabled selected>Select your role</option>
       <option value="architect">Architect</option>
       <option value="designer">Interior Designer</option>
@@ -112,47 +140,11 @@
       <option value="other">Other</option>
     </select>
 
-    <div id="other-who-container" class="hidden">
-      <label for="other_who_detail">Please specify</label>
-      <input type="text" id="other_who_detail" name="other_who_detail">
-    </div>
-
     <label for="message" class="required">Message</label>
     <textarea id="message" name="message" required placeholder="Write your message..."></textarea>
 
     <button type="submit" class="submit-button">Send</button>
   </form>
-
-  <!-- JS para intl-tel-input -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-  <script>
-    const phoneInput = document.querySelector("#phone_number");
-    window.intlTelInput(phoneInput, {
-      initialCountry: "pt",
-      onlyCountries: [
-        "at", "be", "bg", "ca", "hr", "cy", "cz", "dk", "ee", "fi", "fr",
-        "de", "gr", "hu", "ie", "it", "lv", "lt", "lu", "mt", "nl", "pl",
-        "pt", "ro", "sk", "si", "es", "se", "gb", "us"
-      ],
-      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
-    });
-  </script>
-
-  <!-- JS para campos "Other" -->
-  <script>
-    function toggleOtherField(selectElement, containerId) {
-      const container = document.getElementById(containerId);
-      const input = container.querySelector('input');
-      if (selectElement.value === "other") {
-        container.classList.remove("hidden");
-        input.required = true;
-      } else {
-        container.classList.add("hidden");
-        input.required = false;
-        input.value = "";
-      }
-    }
-  </script>
 
 </body>
 </html>
