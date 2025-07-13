@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Custom Contact Form</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <title>Contact Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <style>
         body {
             background: transparent;
@@ -16,53 +16,64 @@
             margin: auto;
             padding: 20px;
         }
+        label {
+            display: block;
+            margin-top: 20px;
+        }
         input, select, textarea {
             width: 100%;
-            background: transparent;
+            padding: 10px;
+            background-color: transparent;
             border: 1px solid white;
-            padding: 12px;
-            margin-bottom: 20px;
             color: white;
             font-family: 'Montserrat', sans-serif;
+            margin-top: 5px;
         }
         input::placeholder, textarea::placeholder, select {
             color: white;
-            text-transform: uppercase;
         }
         input[type="submit"] {
             background-color: white;
             color: black;
-            border: none;
-            cursor: pointer;
             font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        input[type="submit"]:hover {
-            background-color: #ccc;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 30px;
+            border: none;
+            padding: 12px 20px;
         }
     </style>
 </head>
 <body>
-    <form action="#" method="post">
-        <label for="topic">Topic *</label>
-        <select name="topic" id="topic" required>
-            <option value="" disabled selected>Select a topic</option>
+    <form>
+        <label for="lastname">Name *</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Name *" required>
+
+        <label for="firstname">First name *</label>
+        <input type="text" id="firstname" name="firstname" placeholder="First name *" required>
+
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" placeholder="Company">
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="Email *" required>
+
+        <label for="phone">Phone *</label>
+        <input type="text" id="phone" name="phone" placeholder="Phone *" required>
+
+        <label for="contactObject">Purpose of your request *</label>
+        <select name="contactObject" id="contactObject" required>
+            <option value="" disabled selected>Purpose of your request *</option>
             <option value="General Information">General Information</option>
-            <option value="Schedule Demonstration">Schedule Demonstration</option>
+            <option value="Schedule a Demonstration">Schedule a Demonstration</option>
             <option value="Maintenance">Maintenance</option>
             <option value="Support Request">Support Request</option>
             <option value="Consulting">Consulting</option>
             <option value="Other">Other</option>
         </select>
 
-        <label for="identity">Who are you?</label>
-        <select name="identity" id="identity">
-            <option value="" disabled selected>Select your role</option>
+        <label for="role">Who am I?</label>
+        <select name="role" id="role">
+            <option value="" disabled selected>Who am I?</option>
             <option value="Architect">Architect</option>
             <option value="Interior Designer">Interior Designer</option>
             <option value="Owner">Owner</option>
@@ -71,19 +82,10 @@
             <option value="Other">Other</option>
         </select>
 
-        <label for="name">Name *</label>
-        <input type="text" id="name" name="name" placeholder="Name *" required>
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Type your message here... *" rows="6" required></textarea>
 
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" placeholder="Email *" required>
-
-        <label for="phone">Phone *</label>
-        <input type="text" id="phone" name="phone" placeholder="Phone *" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Type your message here..." rows="6"></textarea>
-
-        <input type="submit" value="Send Request">
+        <input type="submit" value="Send">
     </form>
 </body>
 </html>
