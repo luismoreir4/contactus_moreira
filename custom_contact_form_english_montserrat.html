@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Contact Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: transparent;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        input, select, textarea {
+            width: 100%;
+            background: transparent;
+            border: 1px solid white;
+            padding: 12px;
+            margin-bottom: 20px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        input::placeholder, textarea::placeholder, select {
+            color: white;
+            text-transform: uppercase;
+        }
+        input[type="submit"] {
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #ccc;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <label for="topic">Topic *</label>
+        <select name="topic" id="topic" required>
+            <option value="" disabled selected>Select a topic</option>
+            <option value="General Information">General Information</option>
+            <option value="Schedule Demonstration">Schedule Demonstration</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Support Request">Support Request</option>
+            <option value="Consulting">Consulting</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="identity">Who are you?</label>
+        <select name="identity" id="identity">
+            <option value="" disabled selected>Select your role</option>
+            <option value="Architect">Architect</option>
+            <option value="Interior Designer">Interior Designer</option>
+            <option value="Owner">Owner</option>
+            <option value="Builder">Builder</option>
+            <option value="Property Manager">Property Manager</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" placeholder="Name *" required>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="Email *" required>
+
+        <label for="phone">Phone *</label>
+        <input type="text" id="phone" name="phone" placeholder="Phone *" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Type your message here..." rows="6"></textarea>
+
+        <input type="submit" value="Send Request">
+    </form>
+</body>
+</html>
