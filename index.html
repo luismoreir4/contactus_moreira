@@ -1,91 +1,108 @@
+<!-- Link da fonte Montserrat -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact Form</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: transparent;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-        }
-        form {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-        }
-        label {
-            display: block;
-            margin-top: 20px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            background-color: transparent;
-            border: 1px solid white;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            margin-top: 5px;
-        }
-        input::placeholder, textarea::placeholder, select {
-            color: white;
-        }
-        input[type="submit"] {
-            background-color: white;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 30px;
-            border: none;
-            padding: 12px 20px;
-        }
-    </style>
-</head>
-<body>
-    <form>
-        <label for="lastname">Name *</label>
-        <input type="text" id="lastname" name="lastname" placeholder="Name *" required>
+<style>
+  body {
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+  }
 
-        <label for="firstname">First name *</label>
-        <input type="text" id="firstname" name="firstname" placeholder="First name *" required>
+  form {
+    max-width: 600px;
+    margin: auto;
+    background-color: transparent;
+  }
 
-        <label for="company">Company</label>
-        <input type="text" id="company" name="company" placeholder="Company">
+  input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+  }
 
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" placeholder="Email *" required>
+  select option {
+    background-color: white;
+    color: black;
+  }
 
-        <label for="phone">Phone *</label>
-        <input type="text" id="phone" name="phone" placeholder="Phone *" required>
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
 
-        <label for="contactObject">Purpose of your request *</label>
-        <select name="contactObject" id="contactObject" required>
-            <option value="" disabled selected>Purpose of your request *</option>
-            <option value="General Information">General Information</option>
-            <option value="Schedule a Demonstration">Schedule a Demonstration</option>
-            <option value="Maintenance">Maintenance</option>
-            <option value="Support Request">Support Request</option>
-            <option value="Consulting">Consulting</option>
-            <option value="Other">Other</option>
-        </select>
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
 
-        <label for="role">Who am I?</label>
-        <select name="role" id="role">
-            <option value="" disabled selected>Who am I?</option>
-            <option value="Architect">Architect</option>
-            <option value="Interior Designer">Interior Designer</option>
-            <option value="Owner">Owner</option>
-            <option value="Builder">Builder</option>
-            <option value="Property Manager">Property Manager</option>
-            <option value="Other">Other</option>
-        </select>
+  .required::after {
+    content: " *";
+    color: red;
+  }
 
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" placeholder="Type your message here... *" rows="6" required></textarea>
+  .submit-button {
+    background-color: #C2A76D;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 0 auto;
+  }
 
-        <input type="submit" value="Send">
-    </form>
-</body>
-</html>
+  .submit-button:hover {
+    opacity: 0.9;
+  }
+</style>
+
+<form>
+  <label for="lastname" class="required">Name</label>
+  <input type="text" id="lastname" name="lastname" required>
+
+  <label for="firstname" class="required">First name</label>
+  <input type="text" id="firstname" name="firstname" required>
+
+  <label for="company">Company</label>
+  <input type="text" id="company" name="company">
+
+  <label for="email" class="required">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="phone" class="required">Phone</label>
+  <input type="text" id="phone" name="phone" required>
+
+  <label for="request" class="required">Purpose of your request</label>
+  <select id="request" name="request" required>
+    <option value="" disabled selected>Select an option</option>
+    <option value="info">General Information</option>
+    <option value="demo">Schedule a Demo</option>
+    <option value="maintenance">Maintenance</option>
+    <option value="support">Support Request</option>
+    <option value="consulting">Consulting</option>
+    <option value="other">Other</option>
+  </select>
+
+  <label for="who" class="required">Who am I?</label>
+  <select id="who" name="who" required>
+    <option value="" disabled selected>Select your role</option>
+    <option value="architect">Architect</option>
+    <option value="designer">Interior Designer</option>
+    <option value="owner">Owner</option>
+    <option value="builder">Builder</option>
+    <option value="manager">Property Manager</option>
+    <option value="other">Other</option>
+  </select>
+
+  <label for="message" class="required">Message</label>
+  <textarea id="message" name="message" required placeholder="Write your message..."></textarea>
+
+  <button type="submit" class="submit-button">Send</button>
+</form>
